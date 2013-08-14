@@ -9,12 +9,12 @@ import sys
 
 name = 'django-grappelli-navbar'
 package = 'grappelli_navbar'
-description = ''
+description = u'Navigation bar on Django administration'
 url = 'http://github.com/mauler/django-grappelli-navbar'
 author = 'Paulo Roberto Macedo Chaves'
 author_email = 'proberto.macedo@gmail.com'
 license = 'BSD'
-install_requires = ['django-apptemplates']
+install_requires = ['django-apptemplates==0.0.1']
 
 
 def get_version(package):
