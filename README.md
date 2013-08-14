@@ -11,8 +11,18 @@ pip install django-apptemplates
 # settings.py
 
  * Put 'grappelli_navbar' before 'grappelli' on INSTALLED_APPS
+ * Put 'apptemplates.Loader' no your TEMPLATE_LOADERS setting:
 
- * Set the class that will generate your navigation bar.
+```python
+# Your setting will look like:
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'apptemplates.Loader',
+)
+
+```
+ * Set the class that will generate your navigation bar:
 
 ```python
 GRAPPELLI_NAVBAR = u'navbar.Navbar'
