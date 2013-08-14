@@ -8,10 +8,10 @@ import sys
 
 
 name = 'django-grappelli-navbar'
-package = 'grappelli-navbar'
+package = 'grappelli_navbar'
 description = ''
 url = 'http://github.com/mauler/django-grappelli-navbar'
-author = 'mauler'
+author = 'Paulo Roberto Macedo Chaves'
 author_email = 'proberto.macedo@gmail.com'
 license = 'BSD'
 install_requires = ['django-apptemplates']
