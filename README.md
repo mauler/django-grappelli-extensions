@@ -3,14 +3,20 @@
 ## Requirements
 
  * django-apptemplates
+ ```sh
+pip install django-apptemplates
+```
 
 
 # settings.py
 
+ * Put 'grappelli_navbar' before 'grappelli' on INSTALLED_APPS
+
+ * Set the class that will generate your navigation bar.
+
 ```python
 GRAPPELLI_NAVBAR = u'navbar.Navbar'
 ```
-
 
 # navbar.py
 
