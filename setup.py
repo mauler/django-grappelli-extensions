@@ -1,10 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
-import re
+from setuptools import setup, find_packages
 import os
+import re
 import sys
+
+
+VERSION_FILE = 'grappelli_navbar/__init__.py'
+version_text = open(VERSION_FILE, "rt").read()
+VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
+mo = re.search(VSRE, version_text, re.M)
+if mo:
+    version = mo.group(1)
+else:
+    raise RuntimeError(
+        "Unable to find version string in %s." % (VERSION_FILE,))
 
 
 name = 'django-grappelli-navbar'
@@ -19,46 +30,12 @@ install_requires = [
     'django-grappelli>=2.4.5']
 
 
-def get_version(package):
-    """
-    Return package version as listed in `__version__` in `init.py`.
-    """
-    init_py = open(os.path.join(package, '__init__.py')).read()
-    return re.search(
-        "^__version__ = ['\"]([^'\"]+)['\"]", init_py, re.MULTILINE).group(1)
-
-
-def get_packages(package):
-    """
-    Return root package and all sub-packages.
-    """
-    return [dirpath
-            for dirpath, dirnames, filenames in os.walk(package)
-            if os.path.exists(os.path.join(dirpath, '__init__.py'))]
-
-
-def get_package_data(package):
-    """
-    Return all files under the root package, that are not in a
-    package themselves.
-    """
-    walk = [(dirpath.replace(package + os.sep, '', 1), filenames)
-            for dirpath, dirnames, filenames in os.walk(package)
-            if not os.path.exists(os.path.join(dirpath, '__init__.py'))]
-
-    filepaths = []
-    for base, filenames in walk:
-        filepaths.extend([os.path.join(base, filename)
-                          for filename in filenames])
-    return {package: filepaths}
-
-
 if sys.argv[-1] == 'publish':
     code = os.system("python setup.py sdist upload")
     if code:
         sys.exit()
 
-    args = {'version': get_version(package)}
+    args = {'version': version}
     print "You probably want to also tag the version now:"
     print "  git tag -a %(version)s -m 'version %(version)s'" % args
     print "  git push --tags"
@@ -67,13 +44,24 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name=name,
-    version=get_version(package),
+    version=version,
     url=url,
-    license=license,
-    description=description,
     author=author,
     author_email=author_email,
-    packages=get_packages(package) + ['grappelli_navbar/templates'],
-    package_data=get_package_data(package),
+    license=license,
+    packages=find_packages(),
+    include_package_data=True,
+    description=description,
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python",
+        "Operating System :: OS Independent",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Utilities",
+        "Environment :: Web Environment",
+        "Framework :: Django",
+    ],
     install_requires=install_requires
 )
