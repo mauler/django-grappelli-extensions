@@ -54,7 +54,10 @@ def get_package_data(package):
 
 
 if sys.argv[-1] == 'publish':
-    os.system("python setup.py sdist upload")
+    code = os.system("python setup.py sdist upload")
+    if code:
+        sys.exit()
+
     args = {'version': get_version(package)}
     print "You probably want to also tag the version now:"
     print "  git tag -a %(version)s -m 'version %(version)s'" % args
@@ -70,7 +73,7 @@ setup(
     description=description,
     author=author,
     author_email=author_email,
-    packages=get_packages(package),
+    packages=get_packages(package) + ['grappelli_navbar/templates'],
     package_data=get_package_data(package),
     install_requires=install_requires
 )
