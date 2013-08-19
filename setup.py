@@ -14,7 +14,9 @@ url = 'http://github.com/mauler/django-grappelli-navbar'
 author = 'Paulo Roberto Macedo Chaves'
 author_email = 'proberto.macedo@gmail.com'
 license = 'BSD'
-install_requires = ['django-apptemplates==0.0.1']
+install_requires = [
+    'django-apptemplates>=0.0.1',
+    'django-grappelli>=2.4.5']
 
 
 def get_version(package):
