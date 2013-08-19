@@ -24,7 +24,6 @@ def get_children(Navbar, request):
     children = []
     for node in Navbar.nodes:
         if node.__class__.__name__.endswith("Node"):
-#            if isinstance(node, Node):
             title, params = node.as_tuple()
         else:
             title, params = node
@@ -34,7 +33,6 @@ def get_children(Navbar, request):
         root = {'title': title, 'children': [], 'url': url}
         for node in nodes:
             if node.__class__.__name__.endswith("Node"):
-#            if isinstance(node, Node):
                 title, params = node.as_tuple()
             else:
                 title, params = node
