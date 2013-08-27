@@ -3,7 +3,7 @@
 ## Requirements
 
  * django-apptemplates
- ```sh
+```sh
 pip install django-apptemplates
 ```
 
