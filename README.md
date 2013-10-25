@@ -1,5 +1,8 @@
 # django-grappelli-navbar
 
+![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/screenshot.jpg)
+
+
 ## Requirements
 
  * django-apptemplates
@@ -63,11 +66,7 @@ class Navbar(object):
 
 ## TODO
 
-[ ] Screenshots on README.md
-
 [ ] Close dropdown when other is clicked.
-
-[ ] setup.py
 
 [ ] Create helper roots: AppRoot
 
