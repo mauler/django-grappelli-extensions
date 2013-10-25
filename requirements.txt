@@ -1,0 +1,4 @@
+django-grappelli>=2.4.7
+django-classy-tags>=0.4
+django-apptemplates>=0.0.1
+
