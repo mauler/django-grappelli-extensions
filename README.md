@@ -1,14 +1,9 @@
 # django-grappelli-navbar
 
+![Navigation bar](https://api.travis-ci.org/gotlium/django-grappelli-navbar.png?branch=master)
+
+
 ![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/screenshot.jpg)
-
-
-## Requirements
-
- * django-apptemplates
-```sh
-pip install django-apptemplates
-```
 
 
 # settings.py

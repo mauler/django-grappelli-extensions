@@ -1,0 +1,23 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-lxml
+  - export PIP_USE_MIRRORS=true
+  - export DJANGO_SETTINGS_MODULE=grappelli_navbar.test_settings
+install:
+  - pip install -e . --use-mirrors
+  - pip install -r requirements/tests.txt Django==$DJANGO --use-mirrors
+before_script:
+  - flake8 grappelli_navbar
+script:
+  - coverage run --branch --source=grappelli_navbar `which django-admin.py` test grappelli_navbar
+  - coverage report --omit="grappelli_navbar/test*"
+env:
+  - DJANGO=1.4.9
+  - DJANGO=1.5.5
+branches:
+  only:
+    - master
