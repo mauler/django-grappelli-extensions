@@ -39,7 +39,6 @@ def get_children(Navbar, request):
         else:
             title, params = node
 
-        print title, has_perms(request, params)
         if not has_perms(request, params):
             continue
 
