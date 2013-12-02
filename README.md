@@ -58,6 +58,12 @@ class Navbar(object):
     )
 ```
 
+## CHANGELOG
+
+### 0.2.0 (2 Dec, 2013)
+#### Improvements:
+* Adds param "perms" to CLNode (Accept a list of admin permissions ex: ['change', 'add'] and if any of these is valid the node is showed)
+
 
 ## TODO
 
@@ -66,3 +72,4 @@ class Navbar(object):
 [ ] Create helper roots: AppRoot
 
 [ ] Create helper nodes: AppNode, ModelNode
+

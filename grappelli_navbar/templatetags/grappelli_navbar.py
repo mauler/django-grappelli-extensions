@@ -20,6 +20,17 @@ module = sys.modules[module]
 Navbar = getattr(module, parts[-1])
 
 
+def has_perms(request, params):
+    if 'perm' in params:
+        perms = [params['perm']]
+    else:
+        perms = params.get('perms', [])
+    if perms:
+        perms = [request.user.has_perm(p) for p in perms]
+        return any(perms)
+    return True
+
+
 def get_children(Navbar, request):
     children = []
     for node in Navbar.nodes:
@@ -27,6 +38,10 @@ def get_children(Navbar, request):
             title, params = node.as_tuple()
         else:
             title, params = node
+
+        print title, has_perms(request, params)
+        if not has_perms(request, params):
+            continue
 
         nodes = params.get("nodes", [])
         url = params.get('url')
@@ -38,9 +53,8 @@ def get_children(Navbar, request):
                 title, params = node
 
             url = params.get('url')
-            perm = params.get('perm')
             node = {'title': title, 'url': url}
-            if perm is None or request.user.has_perm(perm):
+            if has_perms(request, params):
                 root['children'].append(node)
 
         if root['children'] or root['url']:

@@ -9,10 +9,11 @@ class Node(object):
 
 
 class CLNode(Node):
-    def __init__(self, app, model, title=None):
+    def __init__(self, app, model, title=None, perms=['change']):
         self.app = app
         self.model = model
         self.title = title
+        self.perms = perms
 
     def as_tuple(self):
         model = get_model(self.app, self.model)
@@ -22,6 +23,7 @@ class CLNode(Node):
                 self.model.title() + 's' if vnp == self.model + 's' else vnp
         else:
             title = self.title
+        perms = ['%s.%s_%s' % (self.app, i, self.model) for i in self.perms]
         return title, {
-            'perm': '%s.change_%s' % (self.app, self.model),
+            'perms': perms,
             'url': reverse('admin:%s_%s_changelist' % (self.app, self.model))}
