@@ -18,3 +18,17 @@
         <li><a href="{{ root.url }}">{{ root.title }}</a></li>
     {% endif %}
 {% endfor %}
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $("#grp-navigation .grp-collapse").mouseover(function(){
+                $("#grp-navigation .grp-collapse").removeClass('grp-open');
+                $("#grp-navigation .grp-collapse").removeClass('grp-closed');
+                $(this).addClass('grp-open');
+            }).mouseleave(function(){
+                $("#grp-navigation .grp-collapse").removeClass('grp-open');
+            });
+        });
+    })(grp.jQuery);
+</script>
