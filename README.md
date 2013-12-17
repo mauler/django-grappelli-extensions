@@ -8,7 +8,7 @@
 
 # settings.py
 
- * Put 'grappelli_navbar' before 'grappelli' on INSTALLED_APPS
+ * Put 'grappelli_navbar' **before** 'grappelli' on INSTALLED_APPS
  * Put 'apptemplates.Loader' no your TEMPLATE_LOADERS setting:
 
 ```python
@@ -23,14 +23,12 @@ TEMPLATE_LOADERS = (
  * Set the class that will generate your navigation bar:
 
 ```python
-GRAPPELLI_NAVBAR = u'navbar.Navbar'
+GRAPPELLI_NAVBAR = 'navbar.Navbar'
 ```
 
 # navbar.py
 
 ```python
-#-*- coding:utf-8 -*-
-
 from django.core.urlresolvers import reverse_lazy
 
 from grappelli_navbar.nodes import CLNode
@@ -49,7 +47,7 @@ class Navbar(object):
             }),
         )}),
         ('Sites',
-         {'url': reverse_lazy('admin:sites_site_changelist')}),
+            {'url': reverse_lazy('admin:sites_site_changelist')}),
         ('Nodes', {'nodes': (
             CLNode('auth', 'user'),
             CLNode('sites', 'site'),
@@ -67,7 +65,7 @@ class Navbar(object):
 
 ## TODO
 
-[ ] Close dropdown when other is clicked.
+[x] Close dropdown when other is clicked.
 
 [ ] Create helper roots: AppRoot
 
