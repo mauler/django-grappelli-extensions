@@ -7,7 +7,7 @@ import re
 import sys
 
 
-VERSION_FILE = 'grappelli_navbar/__init__.py'
+VERSION_FILE = 'grappelli_extensions/__init__.py'
 version_text = open(VERSION_FILE, "rt").read()
 VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
 mo = re.search(VSRE, version_text, re.M)
@@ -18,16 +18,17 @@ else:
         "Unable to find version string in %s." % (VERSION_FILE,))
 
 
-name = 'django-grappelli-navbar'
-package = 'grappelli_navbar'
-description = u'Navigation bar on Django administration'
-url = 'http://github.com/mauler/django-grappelli-navbar'
-author = 'Paulo Roberto Macedo Chaves'
-author_email = 'proberto.macedo@gmail.com'
+name = 'django-grappelli-extensions'
+package = 'grappelli_extensions'
+description = 'Extensions for Django Grappelli admin interface'
+url = \
+    'http://github.com/django-grappelli-extensions/django-grappelli-extensions'
+author = 'Paulo R. Macedo, Igor P. Leroy'
+author_email = 'proberto.macedo@gmail.com, ip.leroy@gmail.com'
 license = 'BSD'
 install_requires = [
     'django-apptemplates>=0.0.1',
-    'django-grappelli>=2.4.7',
+    'django-grappelli>=2.4.6',
     'django-classy-tags>=0.4']
 
 
