@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'grappelli_navbar',
+    'grappelli_extensions',
     'grappelli',
     'django.contrib.admin',
 ]
@@ -31,7 +31,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEST_RUNNER = 'discover_runner.DiscoverRunner'
-GRAPPELLI_NAVBAR = u'grappelli_navbar.test_navbar.Navbar'
+GRAPPELLI_EXTENSIONS_NAVBAR = 'grappelli_extensions.test_navbar.Navbar'
 
 ROOT_URLCONF = 'grappelli_navbar.test_urls'
 STATIC_URL = '/static/'

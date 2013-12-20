@@ -2,7 +2,7 @@
 
 from django.core.urlresolvers import reverse_lazy
 
-from grappelli_navbar.nodes import CLNode
+from grappelli_extensions.nodes import CLNode
 
 
 class Navbar(object):

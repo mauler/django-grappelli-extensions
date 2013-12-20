@@ -1,4 +1,3 @@
- #!/usr/bin/env python
  #-*- coding:utf-8 -*-
 
 import sys
@@ -10,10 +9,13 @@ from django import template
 from classytags.helpers import InclusionTag
 
 
-GRAPPELLI_NAVBAR = \
-    getattr(settings, "GRAPPELLI_NAVBAR", u'grappelli_navbar.navbar.Navbar')
+GRAPPELLI_EXTENSIONS_NAVBAR = \
+    getattr(
+        settings,
+        'GRAPPELLI_EXTENSIONS_NAVBAR',
+        'grappelli_extensions.navbar.Navbar')
 
-parts = GRAPPELLI_NAVBAR.split(".")
+parts = GRAPPELLI_EXTENSIONS_NAVBAR.split(".")
 module = ".".join(parts[:-1])
 __import__(module)
 module = sys.modules[module]
@@ -62,7 +64,7 @@ def get_children(Navbar, request):
 
 
 class GrappelliNavbar(InclusionTag):
-    name = u"grappelli_navbar"
+    name = 'grappelli_navbar'
     template = 'grappelli/navbar.html'
 
     def get_context(self, context):

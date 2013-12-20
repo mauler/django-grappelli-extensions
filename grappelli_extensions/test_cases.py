@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 from django.test.client import Client
 from django.test import TestCase
 
-from grappelli_navbar.templatetags.grappelli_navbar import get_children, Navbar
+from grappelli_extensions.templatetags.grappelli_navbar \
+    import get_children, Navbar
 
 
 class NavBarTestCase(TestCase):
