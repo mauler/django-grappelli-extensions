@@ -1,14 +1,14 @@
-# django-grappelli-navbar
+# django-grappelli-extensions
 
 ![Navigation bar](https://api.travis-ci.org/gotlium/django-grappelli-navbar.png?branch=master)
-
+## navbar
 
 ![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/screenshot.jpg)
 
 
-# settings.py
+#### settings.py
 
- * Put 'grappelli_navbar' **before** 'grappelli' on INSTALLED_APPS
+ * Put 'grappelli_extensions' **before** 'grappelli' on INSTALLED_APPS
  * Put 'apptemplates.Loader' no your TEMPLATE_LOADERS setting:
 
 ```python
@@ -23,15 +23,15 @@ TEMPLATE_LOADERS = (
  * Set the class that will generate your navigation bar:
 
 ```python
-GRAPPELLI_NAVBAR = 'navbar.Navbar'
+GRAPPELLI_EXTENSIONS_NAVBAR = 'navbar.Navbar'
 ```
 
-# navbar.py
+#### navbar.py
 
 ```python
 from django.core.urlresolvers import reverse_lazy
 
-from grappelli_navbar.nodes import CLNode
+from grappelli_extensions.nodes import CLNode
 
 
 class Navbar(object):
@@ -56,18 +56,10 @@ class Navbar(object):
     )
 ```
 
-## CHANGELOG
+### ROADMAP for 0.2.0
 
-### 0.2.0 (2 Dec, 2013)
-#### Improvements:
-* Adds param "perms" to CLNode (Accept a list of admin permissions ex: ['change', 'add'] and if any of these is valid the node is showed)
+[ ] Static site with docs on github.io
 
+[ ] Basic skins
 
-## TODO
-
-[x] Close dropdown when other is clicked.
-
-[ ] Create helper roots: AppRoot
-
-[ ] Create helper nodes: AppNode, ModelNode
-
+[ ] Icons for navbar
