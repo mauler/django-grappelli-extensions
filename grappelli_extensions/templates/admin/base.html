@@ -1,8 +1,21 @@
 {% extends "grappelli:admin/base.html" %}
 
-{% load grappelli_navbar %}
+{% load grappelli_navbar static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link href="{% static "css/grappelli_extensions.css" %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
 
 {% block userlinks %}
     {% grappelli_navbar %}
     {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% block sidebar %}
+        <div class="sidebar">
+            {% grappelli_sidebar %}
+        </div>
+    {% endblock %}
 {% endblock %}
