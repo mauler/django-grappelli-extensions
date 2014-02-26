@@ -27,6 +27,8 @@ GRAPPELLI_EXTENSIONS_NAVBAR = 'navbar.Navbar'
 
 ## sidebar
 
+![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/sidebar_screenshot.jpg)
+
 * Set the class that will generate your sidebar:
 ```python
 GRAPPELLI_EXTENSIONS_SIDEBAR = 'navbar.Sidebar'
@@ -62,6 +64,12 @@ class Navbar(object):
 ```
 
 **IMPORTANT:** Sidebar follows the very same structure.
+
+## To run tests
+
+```
+python manage.py test --settings=grappelli_extensions.test_settings grappelli_extensions
+```
 
 ## Contributing
 
