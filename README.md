@@ -25,6 +25,12 @@ TEMPLATE_LOADERS = (
 GRAPPELLI_EXTENSIONS_NAVBAR = 'navbar.Navbar'
 ```
 
+## sidebar
+
+* Set the class that will generate your sidebar:
+```python
+GRAPPELLI_EXTENSIONS_SIDEBAR = 'navbar.Sidebar'
+```
 #### navbar.py
 
 ```python
@@ -54,6 +60,8 @@ class Navbar(object):
         CLNode('auth', 'user', u"Site users"),
     )
 ```
+
+**IMPORTANT:** Sidebar follows the very same structure.
 
 ## Contributing
 
