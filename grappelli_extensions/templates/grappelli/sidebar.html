@@ -1,0 +1,32 @@
+<ul>
+    {% for root in sidebar_children %}
+        {% if root.children %}
+            <li>
+                <a href="javascript://" class=" grp-collapse-handler">
+                    {{ root.title }}
+                </a>
+                <ul class="">
+                    {% for node in root.children %}
+                        <li class="">
+                            <a href="{{ node.url }}">
+                                {{ node.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% else %}
+            <li><a href="{{ root.url }}">{{ root.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $(".sidebar .grp-collapse-handler").click(function(){
+                $(this).next('ul').toggle()
+            })
+        });
+    })(grp.jQuery);
+</script>

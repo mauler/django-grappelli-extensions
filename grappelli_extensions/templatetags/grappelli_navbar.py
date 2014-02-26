@@ -15,11 +15,26 @@ GRAPPELLI_EXTENSIONS_NAVBAR = \
         'GRAPPELLI_EXTENSIONS_NAVBAR',
         'grappelli_extensions.navbar.Navbar')
 
-parts = GRAPPELLI_EXTENSIONS_NAVBAR.split(".")
-module = ".".join(parts[:-1])
-__import__(module)
-module = sys.modules[module]
-Navbar = getattr(module, parts[-1])
+GRAPPELLI_EXTENSIONS_SIDEBAR = \
+    getattr(
+        settings,
+        'GRAPPELLI_EXTENSIONS_SIDEBAR',
+        'grappelli_extensions.navbar.Navbar')
+
+options = {
+    'Navbar': GRAPPELLI_EXTENSIONS_NAVBAR,
+    'Sidebar': GRAPPELLI_EXTENSIONS_SIDEBAR
+}
+
+Navbar = None
+Sidebar = None
+
+for name, klass in options.items():
+    parts = klass.split(".")
+    module = ".".join(parts[:-1])
+    __import__(module)
+    module = sys.modules[module]
+    globals()[name] = getattr(module, parts[-1])
 
 
 def has_perms(request, params):
@@ -76,7 +91,7 @@ class GrappelliSidebar(InclusionTag):
     template = 'grappelli/sidebar.html'
 
     def get_context(self, context):
-        return {'children': get_children(Navbar, context['request'])}
+        return {'sidebar_children': get_children(Sidebar, context['request'])}
 
 register = template.Library()
 register.tag(GrappelliNavbar)
