@@ -17,7 +17,7 @@ TEMPLATE_LOADERS = (
 
 ## navbar
 
-![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/screenshot.jpg)
+![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/screenshot.jpg)
 
 * Set the class that will generate your navigation bar:
 
@@ -27,7 +27,7 @@ GRAPPELLI_EXTENSIONS_NAVBAR = 'navbar.Navbar'
 
 ## sidebar
 
-![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/sidebar_screenshot.jpg)
+![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/sidebar_screenshot.jpg)
 
 * Set the class that will generate your sidebar:
 ```python
