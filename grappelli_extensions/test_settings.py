@@ -30,10 +30,10 @@ TEMPLATE_LOADERS = (
     'apptemplates.Loader',
 )
 
-TEST_RUNNER = 'discover_runner.DiscoverRunner'
 GRAPPELLI_EXTENSIONS_NAVBAR = 'grappelli_extensions.test_navbar.Navbar'
+GRAPPELLI_EXTENSIONS_SIDEBAR = 'grappelli_extensions.test_navbar.Sidebar'
 
-ROOT_URLCONF = 'grappelli_navbar.test_urls'
+ROOT_URLCONF = 'grappelli_extensions.test_urls'
 STATIC_URL = '/static/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -45,3 +45,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.static',
 )
+
+
+'''
+The confs bellow are used when for some reason the grappelli wasn't installed
+by PIP, lets say in a development env.
+'''
+import os
+import sys
+
+PROJECT_PATH = ORIGINAL_PROJECT_PATH = \
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(PROJECT_PATH)

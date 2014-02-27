@@ -25,6 +25,14 @@ TEMPLATE_LOADERS = (
 GRAPPELLI_EXTENSIONS_NAVBAR = 'navbar.Navbar'
 ```
 
+## sidebar
+
+![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/sidebar_screenshot.jpg)
+
+* Set the class that will generate your sidebar:
+```python
+GRAPPELLI_EXTENSIONS_SIDEBAR = 'navbar.Sidebar'
+```
 #### navbar.py
 
 ```python
@@ -53,6 +61,14 @@ class Navbar(object):
         )}),
         CLNode('auth', 'user', u"Site users"),
     )
+```
+
+**IMPORTANT:** Sidebar follows the very same structure.
+
+## To run tests
+
+```
+python manage.py test --settings=grappelli_extensions.test_settings grappelli_extensions
 ```
 
 ## Contributing

@@ -8,10 +8,10 @@ from django.test.client import Client
 from django.test import TestCase
 
 from grappelli_extensions.templatetags.grappelli_navbar \
-    import get_children, Navbar
+    import get_children, Navbar, Sidebar
 
 
-class NavBarTestCase(TestCase):
+class BaseTestCase(TestCase):
     def setUp(self):
         login = 'root'
         email = 'root@local.host'
@@ -20,6 +20,8 @@ class NavBarTestCase(TestCase):
         self.client = Client()
         self.client.login(username=login, password=password)
 
+
+class NavBarTestCase(BaseTestCase):
     def test_navbar_default(self):
         factory = RequestFactory()
         request = factory.get(reverse("admin:index"))
@@ -34,3 +36,20 @@ class NavBarTestCase(TestCase):
     def test_navbar_admin_page(self):
         response = self.client.get(reverse("admin:index"))
         self.assertEqual(len(response.context['children']), 4)
+
+
+class SideBarTestCase(BaseTestCase):
+    def test_sidebar_default(self):
+        factory = RequestFactory()
+        request = factory.get(reverse("admin:index"))
+        request.user = self.user
+        children = get_children(Sidebar, request)
+
+        self.assertEqual(len(children), 3)
+
+        tpl = Template(u"{% load grappelli_navbar %}{% grappelli_sidebar %}")
+        self.assertTrue(len(tpl.render(RequestContext(request))) > 0)
+
+    def test_sidebar_admin_page(self):
+        response = self.client.get(reverse("admin:index"))
+        self.assertEqual(len(response.context['sidebar_children']), 3)
