@@ -22,3 +22,9 @@ env:
 branches:
   only:
     - master
+notifications:
+  email:
+    recipients:
+      - ip.leroy@gmail.com
+      - proberto.macedo@gmail.com
+      - raphapassini@gmail.com 

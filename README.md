@@ -1,10 +1,13 @@
 # django-grappelli-extensions [![Build Status](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions)
 
+
 Available features:
 * [Header navbar](#navbar)
 * [Left sidebar](#sidebar)
 
 #### Installation
+
+Python 2.6, 2.7 and Django >= 1.4
 
 ```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
@@ -81,13 +84,14 @@ python manage.py test --settings=grappelli_extensions.test_settings grappelli_ex
 
 [x] Custom left sidebard.
 
-[ ] Make travis.yml file using grappelli-extensions account.
+[x] Make travis.yml file using grappelli-extensions account.
 
-[ ] Static site on http://django-grappelli-extensions.github.io
+[ ] Improve documentation and some texts about the grappelli extensions.
 
 
 ##### ROADMAP for 0.1.3
 
+[ ] Static site on http://django-grappelli-extensions.github.io
 
 [ ] Customized icons for navbar.
 
