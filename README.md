@@ -1,4 +1,4 @@
-# django-grappelli-extensions ![Navigation bar](https://api.travis-ci.org/gotlium/django-grappelli-navbar.png?branch=master)
+# django-grappelli-extensions [![Build Status](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions)
 
 Available features:
 * [Header navbar](#navbar)
