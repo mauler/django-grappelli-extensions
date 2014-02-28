@@ -1,39 +1,33 @@
 # django-grappelli-extensions ![Navigation bar](https://api.travis-ci.org/gotlium/django-grappelli-navbar.png?branch=master)
 
+Available features:
+* [Header navbar](#navbar)
+* [Left sidebar](#sidebar)
+
 #### Installation
 
- * Put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS
- * Put ```apptemplates.Loader``` on your TEMPLATE_LOADERS setting:
+```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
-```python
-# Your setting will look like:
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    'apptemplates.Loader',
-)
-
-```
 
 ## navbar
 
 ![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/screenshot.jpg)
 
-* Set the class that will generate your navigation bar:
+Set the class that will generate your navigation bar:
 
 ```python
-GRAPPELLI_EXTENSIONS_NAVBAR = 'navbar.Navbar'
+GRAPPELLI_EXTENSIONS_NAVBAR = 'extensions.Navbar'
 ```
 
 ## sidebar
 
 ![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/sidebar_screenshot.jpg)
 
-* Set the class that will generate your sidebar:
+Set the class that will generate your sidebar:
 ```python
-GRAPPELLI_EXTENSIONS_SIDEBAR = 'navbar.Sidebar'
+GRAPPELLI_EXTENSIONS_SIDEBAR = 'extensions.Sidebar'
 ```
-#### navbar.py
+#### extensions.py
 
 ```python
 from django.core.urlresolvers import reverse_lazy
@@ -63,7 +57,7 @@ class Navbar(object):
     )
 ```
 
-**IMPORTANT:** Sidebar follows the very same structure.
+**IMPORTANT:** Sidebar class follows the very same structure.
 
 ## To run tests
 
@@ -73,30 +67,42 @@ python manage.py test --settings=grappelli_extensions.test_settings grappelli_ex
 
 ## Contributing
 
-1. Read the features ROADMAP
-2. Fork it
-3. Create your feature branch (`git checkout -b my-new-feature`)
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create new Pull Request :heart:
+1. Read the features ROADMAP.
+2. Fork it.
+3. Create your feature branch. (`git checkout -b my-new-feature`)
+4. Commit your changes. (`git commit -am 'Add some feature'`)
+5. Push to the branch. (`git push origin my-new-feature`)
+6. Create new Pull Request.
 
 
 ## Features
 
-##### ROADMAP for 0.2
+##### ROADMAP for 0.1.2
 
-[ ] Static site with docs on github.io
+[x] Custom left sidebard.
 
-[ ] Basic skins
+[ ] Make travis.yml file using grappelli-extensions account.
 
-[ ] Custom columns for Grappelli Dashboard
+[ ] Static site on http://django-grappelli-extensions.github.io
 
-##### ROADMAP for 0.3
 
-[ ] Customized icons for navbar
+##### ROADMAP for 0.1.3
 
-[ ] Customized icons for dashboard
 
-##### ROADMAP for 0.4
+[ ] Customized icons for navbar.
 
-[ ] Custom left sidebard
+[ ] Customized icons for sidebar.
+
+[ ] Customized icons for dashboard.
+
+
+##### ROADMAP for 0.1.4
+
+[ ] Create some skins themes.
+
+[ ] Custom columns for Grappelli Dashboard.
+
+
+##### ROADMAP for 0.1.5
+
+[ ] Redesign Grappelli Dashboard.
