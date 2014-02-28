@@ -7,7 +7,7 @@ Available features:
 
 #### Installation
 
-* Python 2.6, 2.7 and Django >= 1.4
+* Python 2.6, 2.7, django-grappelli >= 2.4.5 and Django >= 1.4
 * Simply```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
 
