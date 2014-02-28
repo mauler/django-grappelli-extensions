@@ -20,14 +20,13 @@ else:
 
 name = 'django-grappelli-extensions'
 package = 'grappelli_extensions'
-description = 'Extensions for Django Grappelli admin interface'
+description = 'Extensions for Grappelli Admin interface'
 url = \
     'http://github.com/django-grappelli-extensions/django-grappelli-extensions'
 author = 'Paulo R. Macedo, Igor P. Leroy'
 author_email = 'proberto.macedo@gmail.com, ip.leroy@gmail.com'
 license = 'BSD'
 install_requires = [
-    'django-apptemplates>=0.0.1',
     'django-grappelli>=2.4.6',
     'django-classy-tags>=0.4']
 

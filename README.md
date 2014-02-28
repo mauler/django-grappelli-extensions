@@ -7,9 +7,8 @@ Available features:
 
 #### Installation
 
-Python 2.6, 2.7 and Django >= 1.4
-
-```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
+* Python 2.6, 2.7 and Django >= 1.4
+* Simply```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
 
 ## navbar
