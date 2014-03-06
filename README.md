@@ -9,7 +9,7 @@
 # settings.py
 
  * Put 'grappelli_navbar' **before** 'grappelli' on INSTALLED_APPS
- * Put 'apptemplates.Loader' no your TEMPLATE_LOADERS setting:
+ * Put 'apptemplates.Loader' on your TEMPLATE_LOADERS setting:
 
 ```python
 # Your setting will look like:
