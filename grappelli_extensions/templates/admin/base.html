@@ -152,11 +152,11 @@
             <!-- CONTENT-CONTAINER -->
             <div id="grp-content-container">
                 {% block sidebar %}
-                    <div class="sidebar">
+                    {% grappelli_has_sidebar %}
                         {% grappelli_sidebar %}
-                    </div>
+                    {% endsidebar %}
                 {% endblock %}
-                <div class="g-content-with-sidebar">
+                <div {% grappelli_has_sidebar %}class="g-content-with-sidebar"{% endsidebar %}>
                     {% block content %}
                         {{ content }}
                         {% block filters %}{% endblock %}

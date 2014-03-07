@@ -6,35 +6,27 @@ from django.conf import settings
 
 from django import template
 
+from classytags.core import Tag, Options
 from classytags.helpers import InclusionTag
 
 
-GRAPPELLI_EXTENSIONS_NAVBAR = \
-    getattr(
-        settings,
-        'GRAPPELLI_EXTENSIONS_NAVBAR',
-        'grappelli_extensions.navbar.Navbar')
-
-GRAPPELLI_EXTENSIONS_SIDEBAR = \
-    getattr(
-        settings,
-        'GRAPPELLI_EXTENSIONS_SIDEBAR',
-        'grappelli_extensions.navbar.Navbar')
-
-options = {
-    'Navbar': GRAPPELLI_EXTENSIONS_NAVBAR,
-    'Sidebar': GRAPPELLI_EXTENSIONS_SIDEBAR
-}
-
-Navbar = None
-Sidebar = None
-
-for name, klass in options.items():
-    parts = klass.split(".")
+def get_extension(setting, default, *args, **kwargs):
+    extension = getattr(settings, setting, default)
+    parts = extension.split(".")
     module = ".".join(parts[:-1])
     __import__(module)
     module = sys.modules[module]
-    globals()[name] = getattr(module, parts[-1])
+    return getattr(module, parts[-1])
+
+
+def get_navbar():
+    return get_extension('GRAPPELLI_EXTENSIONS_NAVBAR',
+                         'grappelli_extensions.navbar.Navbar')
+
+
+def get_sidebar():
+    return get_extension('GRAPPELLI_EXTENSIONS_SIDEBAR',
+                         'grappelli_extensions.navbar.Navbar')
 
 
 def has_perms(request, params):
@@ -83,7 +75,8 @@ class GrappelliNavbar(InclusionTag):
     template = 'grappelli/navbar.html'
 
     def get_context(self, context):
-        return {'children': get_children(Navbar, context['request'])}
+        navbar = get_navbar()
+        return {'children': get_children(navbar, context['request'])}
 
 
 class GrappelliSidebar(InclusionTag):
@@ -91,11 +84,27 @@ class GrappelliSidebar(InclusionTag):
     template = 'grappelli/sidebar.html'
 
     def get_context(self, context):
+        sidebar = get_sidebar()
         return {
-            'sidebar_children': get_children(Sidebar, context['request']),
+            'sidebar_children': get_children(sidebar, context['request']),
             'request': context['request']
         }
+
+
+class GrappelliHasSidebar(Tag):
+    name = 'grappelli_has_sidebar'
+    options = Options(
+        blocks=[('endsidebar', 'nodelist')],
+    )
+
+    def render_tag(self, context, nodelist):
+        output = ''
+        sidebar = get_sidebar()
+        if(len(sidebar.nodes)):
+            output = nodelist.render(context)
+        return output
 
 register = template.Library()
 register.tag(GrappelliNavbar)
 register.tag(GrappelliSidebar)
+register.tag(GrappelliHasSidebar)

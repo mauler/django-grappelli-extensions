@@ -5,10 +5,11 @@ from django.test.client import RequestFactory
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.test.client import Client
+from django.test.utils import override_settings
 from django.test import TestCase
 
 from grappelli_extensions.templatetags.grappelli_navbar \
-    import get_children, Navbar, Sidebar
+    import get_children, get_navbar, get_sidebar
 
 
 class BaseTestCase(TestCase):
@@ -26,7 +27,8 @@ class NavBarTestCase(BaseTestCase):
         factory = RequestFactory()
         request = factory.get(reverse("admin:index"))
         request.user = self.user
-        children = get_children(Navbar, request)
+        navbar = get_navbar()
+        children = get_children(navbar, request)
 
         self.assertEqual(len(children), 4)
 
@@ -43,7 +45,8 @@ class SideBarTestCase(BaseTestCase):
         factory = RequestFactory()
         request = factory.get(reverse("admin:index"))
         request.user = self.user
-        children = get_children(Sidebar, request)
+        sidebar = get_sidebar()
+        children = get_children(sidebar, request)
 
         self.assertEqual(len(children), 3)
 
@@ -53,3 +56,17 @@ class SideBarTestCase(BaseTestCase):
     def test_sidebar_admin_page(self):
         response = self.client.get(reverse("admin:index"))
         self.assertEqual(len(response.context['sidebar_children']), 3)
+
+
+@override_settings(GRAPPELLI_EXTENSIONS_SIDEBAR=
+                   'grappelli_extensions.navbar.Navbar')
+class NoSideBarTestCase(BaseTestCase):
+    def test_no_sidebar_admin_page(self):
+        factory = RequestFactory()
+        request = factory.get(reverse("admin:index"))
+        request.user = self.user
+        tpl = Template(u"{% load grappelli_navbar %}"
+                       "{% grappelli_has_sidebar %}"
+                       "{% grappelli_sidebar %}"
+                       "{% endsidebar %}")
+        self.assertFalse(len(tpl.render(RequestContext(request))))

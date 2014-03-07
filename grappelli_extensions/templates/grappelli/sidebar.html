@@ -1,25 +1,27 @@
-<ul>
-    {% for root in sidebar_children %}
-        {% if root.children %}
-            <li>
-                <a href="javascript://" class=" grp-collapse-handler">
-                    {{ root.title }}
-                </a>
-                <ul class="">
-                    {% for node in root.children %}
-                        <li class="">
-                            <a href="{{ node.url }}" {% if node.url == request.path %}class="active"{% endif %}>
-                                {{ node.title }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </li>
-        {% else %}
-            <li><a href="{{ root.url }}" {% if root.url == request.path %}class="active"{% endif %}>{{ root.title }}</a></li>
-        {% endif %}
-    {% endfor %}
-</ul>
+<div class="sidebar">
+    <ul>
+        {% for root in sidebar_children %}
+            {% if root.children %}
+                <li>
+                    <a href="javascript://" class=" grp-collapse-handler">
+                        {{ root.title }}
+                    </a>
+                    <ul class="">
+                        {% for node in root.children %}
+                            <li class="">
+                                <a href="{{ node.url }}" {% if node.url == request.path %}class="active"{% endif %}>
+                                    {{ node.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% else %}
+                <li><a href="{{ root.url }}" {% if root.url == request.path %}class="active"{% endif %}>{{ root.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
 
 <script>
     (function($) {
