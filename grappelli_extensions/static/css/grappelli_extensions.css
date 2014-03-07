@@ -1,7 +1,7 @@
 .sidebar {
     float: left;
     display: inline-block;
-    width: 10%;
+    width: 20%;
     border-radius: 3px;
     background: #eee;
     border: 1px solid #ccc;
@@ -50,5 +50,5 @@
 .g-content-with-sidebar {
     display: inline-block;
     margin-left: 10px;
-    width: 88%;
+    width: 78%;
 }

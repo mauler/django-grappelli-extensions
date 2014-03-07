@@ -1,0 +1,330 @@
+// Journal 3.1.1
+// Bootswatch
+// -----------------------------------------------------
+
+@import "variables";
+@import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");
+@white: #FFF;
+@black: #000;
+@lblack: #333;
+@lred: #eb6864;
+@dred: #e22620;
+@lgray: #eeeeee;
+@dgray: rgb(119, 119, 119);
+@lborder: rgba(0, 0, 0, 0.15);
+
+// Navbar =====================================================================
+
+/*body {
+  font-family: @font-family-serif;
+}
+*/
+.navbar {
+  font-size: 18px;
+  font-family: @font-family-sans-serif;
+  font-weight: @headings-font-weight;
+}
+
+.navbar-brand {
+  font-size: 18px;
+  font-weight: @headings-font-weight;
+  text-transform: uppercase;
+}
+
+// Buttons ====================================================================
+
+// Typography =================================================================
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+.has-warning {
+  .help-block,
+  .control-label {
+    color: @brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-danger;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label {
+    color: @brand-primary;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-primary;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label {
+    color: @brand-success;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-success;
+  }
+}
+
+// Navs =======================================================================
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================
+
+.jumbotron {
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: @font-family-sans-serif;
+    font-weight: @headings-font-weight;
+    color: #000;
+  }
+}
+
+.panel {
+
+  &-primary,
+  &-success,
+  &-warning,
+  &-danger,
+  &-info {
+    .panel-title {
+      color: #fff;
+    }
+  }
+
+
+}
+
+// GRAPPELLI ==================================================================
+
+h1 {
+  font-family: @font-family-sans-serif;
+  padding: 8px 0 20px 0;
+  font-size: 30px;
+
+}
+
+header#grp-header {
+  font-family: @font-family-sans-serif;
+
+  #grp-navigation {
+    background-color: @white;
+    background-image: none;
+    font-weight: 700;
+    color: @black;
+    font-size: 16px;
+    border: 0;
+
+    h1#grp-admin-title {
+      font-size: 20px;
+    }
+
+    a, a:hover {
+      color: @black;
+    }
+
+    ul#grp-user-tools {
+      border: 0;
+
+      li {
+        border: 0;
+
+        ul {
+          margin-left: 7px;
+          margin-top: 0;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+          background-color: @white;
+          font-weight: normal;
+          color: @lblack;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-clip: padding-box;
+
+          li {
+            a {
+              padding: 8px;
+              vertical-align: middle;
+            }
+            a:hover {
+              background: @lred;
+              color: @white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #grp-context-navigation {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    -moz-box-shadow:    0px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    background-clip: padding-box;
+    #grp-breadcrumbs {
+      ul {
+        font-size: 14px;
+        a {
+          padding-right: 0;
+          background: none;
+          color: @lred;
+        }
+        a:hover {
+          color: @dred;
+          font-weight: 800;
+        }
+        a:after {
+          margin-left: 10px;
+          content: '>'
+        }
+      }
+    }
+  }
+}
+
+.grp-object-tools {
+  top: -44px;
+
+  li {
+    font-family: @font-family-serif;
+
+    a {
+      opacity: 1;
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 8px 12px;
+      font-size: 15px;
+      line-height: 1.42857143;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      color: @white;
+      background-color: #999999;
+      border-color: #999999;
+
+    }
+    a:hover {
+      background: none;
+      border: 1px solid transparent !important;
+      background-color: #858585;
+      border-color: #7a7a7a;
+    }
+  }
+
+  li:last-child {
+    padding-right: 25px;
+  }
+}
+
+.sidebar {
+  font-family: @font-family-sans-serif;
+  background: @white;
+  border: 0;
+
+  ul {
+    border-radius: 3px;
+    li {
+      border: 0;
+      background: @white;
+      padding: 0;
+      display: block;
+      margin-top: 2px;
+
+      a {
+        color: @lred;
+        text-shadow: none;
+        padding: 8px 12px;
+        display: block;
+        position: relative;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      a:hover {
+        background: @lgray;
+        color: @dred;
+      }
+
+      a.opened {
+        color: @dred;
+      }
+
+      a.active {
+        background: @lred;
+        color: @white;
+      }
+
+      ul {
+        margin-top: 2px;
+        margin-left: 18px;
+        li {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+#grp-content-container {
+  padding-top: 10px;
+
+  .g-content-with-sidebar {
+    margin-left: 5px;
+  }
+}
+
+.grp-module {
+  border: 1px solid @lred;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-bottom: 10px;
+  background: @white;
+
+  .grp-row, .grp-row:not(tr) {
+    border-bottom-color: @lborder;
+    a {
+      color: @dgray;
+      font-size: 12px;
+    }
+    a:hover {
+      color: @lred;
+      font-weight: 700;
+    }
+  }
+
+  h2 {
+    color: @white;
+    border-radius: 0;
+    background-color: @lred;
+    border-color: @lred;
+    border-bottom: 1px solid transparent;
+    background-image: none;
+    text-shadow: none;
+    font-size: 14px;
+    a {
+      color: @white;
+    }
+  }
+}
