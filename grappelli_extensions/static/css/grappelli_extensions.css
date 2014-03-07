@@ -21,6 +21,11 @@
     font-size: 13px;
 }
 
+.sidebar ul li a.opened,
+.sidebar ul li a.active {
+    color: #444;
+}
+
 .sidebar ul li:first-child {
     border-top: 0;
 }

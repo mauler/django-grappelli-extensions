@@ -91,7 +91,10 @@ class GrappelliSidebar(InclusionTag):
     template = 'grappelli/sidebar.html'
 
     def get_context(self, context):
-        return {'sidebar_children': get_children(Sidebar, context['request'])}
+        return {
+            'sidebar_children': get_children(Sidebar, context['request']),
+            'request': context['request']
+        }
 
 register = template.Library()
 register.tag(GrappelliNavbar)

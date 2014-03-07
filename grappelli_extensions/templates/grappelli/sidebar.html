@@ -8,7 +8,7 @@
                 <ul class="">
                     {% for node in root.children %}
                         <li class="">
-                            <a href="{{ node.url }}">
+                            <a href="{{ node.url }}" {% if node.url == request.path %}class="active"{% endif %}>
                                 {{ node.title }}
                             </a>
                         </li>
@@ -16,7 +16,7 @@
                 </ul>
             </li>
         {% else %}
-            <li><a href="{{ root.url }}">{{ root.title }}</a></li>
+            <li><a href="{{ root.url }}" {% if root.url == request.path %}class="active"{% endif %}>{{ root.title }}</a></li>
         {% endif %}
     {% endfor %}
 </ul>
@@ -25,8 +25,10 @@
     (function($) {
         $(document).ready(function() {
             $(".sidebar .grp-collapse-handler").click(function(){
+                $(this).toggleClass('opened')
                 $(this).next('ul').toggle()
             })
+            $('a.active').parents('ul:hidden').show()
         });
     })(grp.jQuery);
 </script>
