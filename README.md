@@ -8,7 +8,7 @@ Available features:
 #### Installation
 
 * Python 2.6, 2.7, django-grappelli >= 2.4.5 and Django >= 1.4
-* Simply```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
+* Simply ```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
 
 ## navbar
@@ -64,7 +64,9 @@ class Navbar(object):
 ## To run tests
 
 ```
-python manage.py test --settings=grappelli_extensions.test_settings grappelli_extensions
+pip install -r requirements/tests.txt Django
+export DJANGO_SETTINGS_MODULE=grappelli_extensions.test_settings
+`which django-admin.py` test grappelli_extensions"
 ```
 
 ## Contributing
