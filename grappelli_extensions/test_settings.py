@@ -27,7 +27,6 @@ INSTALLED_APPS = [
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'apptemplates.Loader',
 )
 
 GRAPPELLI_EXTENSIONS_NAVBAR = 'grappelli_extensions.test_navbar.Navbar'
