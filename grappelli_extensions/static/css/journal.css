@@ -129,6 +129,7 @@ header#grp-header #grp-context-navigation #grp-breadcrumbs ul a:after {
 }
 .grp-object-tools {
   top: -44px;
+  right: 9px;
 }
 .grp-object-tools li {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -245,4 +246,153 @@ header#grp-header #grp-context-navigation #grp-breadcrumbs ul a:after {
 }
 .grp-module h2 a {
   color: #ffffff;
+}
+.grp-module.pagination {
+  border: 1px solid transparent;
+}
+.grp-module.pagination .grp-row {
+  padding: 0;
+}
+.grp-module.pagination .grp-pagination {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.grp-module.pagination .grp-pagination ul li span,
+.grp-module.pagination .grp-pagination ul li a {
+  font-size: 12px;
+  padding: 8px;
+}
+.grp-module.pagination .grp-pagination ul li a {
+  color: #eb6864;
+}
+.grp-module.pagination .grp-pagination ul li a:hover {
+  color: #e22620;
+  background-color: #eeeeee;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.grp-module.pagination .grp-pagination ul li span.this-page {
+  background-image: none;
+  color: #777777;
+  background-color: #eeeeee;
+}
+.grp-module.pagination .grp-pagination ul li.grp-results span {
+  background-image: none;
+  background-color: #eeeeee;
+  color: #777777;
+}
+.grp-changelist-results {
+  border: 0;
+  background-image: none !important;
+  /* fuck grappelli and its important stuff! */
+  background-color: transparent !important;
+}
+.grp-changelist-results table {
+  padding-top: 12px;
+  width: 100%;
+  border: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+.grp-changelist-results table td {
+  border: 0;
+}
+.grp-changelist-results table tbody tr {
+  border-bottom: 1px solid #777777;
+}
+.grp-changelist-results table tbody tr th,
+.grp-changelist-results table tbody tr td {
+  border: 0;
+}
+.grp-changelist-results table tbody tr td {
+  font-size: 12px;
+}
+.grp-changelist-results table tbody tr th:hover {
+  background-color: transparent;
+}
+.grp-changelist-results table tbody tr.grp-row-even th,
+.grp-changelist-results table tbody tr.grp-row-even td {
+  border: 0;
+}
+.grp-changelist-results table tbody tr.grp-row-even th,
+.grp-changelist-results table tbody tr.grp-row-even td {
+  background-color: #eeeeee;
+}
+.grp-changelist-results table tbody tr.grp-row-even th:hover {
+  background-color: #eeeeee;
+}
+.grp-changelist-results table tbody tr.grp-selected {
+  background-color: #777777;
+}
+.grp-changelist-results table tbody tr.grp-selected td,
+.grp-changelist-results table tbody tr.grp-selected th {
+  background-color: #777777;
+  color: #ffffff;
+}
+.grp-changelist-results table tbody tr.grp-selected td a,
+.grp-changelist-results table tbody tr.grp-selected th a {
+  color: #ffffff;
+}
+.grp-changelist-results table tbody tr.grp-selected th:hover {
+  background-color: #777777;
+}
+.grp-changelist-results table thead {
+  border-bottom: 2px solid #777777;
+}
+.grp-changelist-results table th {
+  background: transparent;
+  padding-top: 8px;
+  border: 0;
+  font-size: 16px;
+}
+.grp-changelist-results table th a {
+  font-size: 16px;
+  color: #000000;
+  padding-bottom: 10px;
+}
+.grp-changelist-results table th:hover {
+  background-image: none !important;
+  background-color: transparent;
+  color: inherit;
+}
+.grp-changelist-results table.grp-sortable thead th.sortable .grp-sortoptions {
+  top: 5px;
+}
+.grp-changelist-results table.grp-sortable thead th.sortable.sorted.ascending,
+.grp-changelist-results table.grp-sortable thead th.sortable.sorted.descending {
+  background-image: none;
+}
+.grp-changelist-results table.grp-sortable thead th.sortable.sorted.ascending .grp-text a,
+.grp-changelist-results table.grp-sortable thead th.sortable.sorted.descending .grp-text a {
+  font-weight: normal;
+  color: #eb6864;
+}
+.grp-module.grp-collapse {
+  border: 0;
+}
+table.grp-sortable thead th div.grp-text span,
+table.grp-sortable thead th.sortable .grp-text a {
+  padding: 10px;
+}
+.grp-pulldown-container .grp-pulldown-handler,
+.grp-pulldown-container .grp-pulldown-handler:hover {
+  background-image: none;
+  background-color: #eeeeee;
+}
+.grp-pulldown-container .grp-pulldown-content,
+.grp-pulldown-container .grp-pulldown-content:hover {
+  padding: 6px;
+  background: #ffffff;
+}
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler {
+  color: #eb6864;
+  background: #eeeeee;
+}
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
+  background-image: none;
+  background-color: #eeeeee;
+  color: #e22620;
+}
+footer.grp-module {
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }

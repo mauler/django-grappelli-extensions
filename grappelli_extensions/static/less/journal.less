@@ -198,6 +198,7 @@ header#grp-header {
 
 .grp-object-tools {
   top: -44px;
+  right: 9px;
 
   li {
     font-family: @font-family-serif;
@@ -327,4 +328,189 @@ header#grp-header {
       color: @white;
     }
   }
+}
+
+.grp-module.pagination {
+  border: 1px solid transparent;
+
+  .grp-row {
+    padding: 0;
+  }
+
+  .grp-pagination {
+    font-family: @font-family-serif;
+    ul {
+      li {
+        span, a {
+          font-size: 12px;
+          padding: 8px;
+        }
+
+        a {
+          color: @lred;
+        }
+
+        a:hover {
+          color: @dred;
+          background-color: @lgray;
+          border-color: @lborder;
+        }
+
+        span.this-page {
+          background-image: none;
+          color: @dgray;
+          background-color: @lgray;
+        }
+      }
+      li.grp-results {
+        span {
+          background-image: none;
+          background-color: @lgray;
+          color: @dgray;
+        }
+      }
+    }
+  }
+}
+
+.grp-changelist-results {
+  border: 0;
+  background-image: none !important; /* fuck grappelli and its important stuff! */
+  background-color: transparent !important;
+
+  table {
+    padding-top: 12px;
+    width: 100%;
+    border: 0;
+    font-family: @font-family-serif;
+    font-size: 14px;
+
+    td {
+      border: 0;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid @dgray;
+
+        th, td {
+          border: 0;
+        }
+
+        td {
+          font-size: 12px;
+        }
+
+        th:hover {
+          background-color: transparent;
+        }
+      }
+      tr.grp-row-even {
+        th, td {
+          border: 0;
+        }
+        th, td {
+          background-color: @lgray;
+        }
+        th:hover {
+          background-color: @lgray;
+        }
+      }
+      tr.grp-selected {
+        background-color: @dgray;
+        td, th {
+          background-color: @dgray;
+          color: @white;
+          a {
+            color: @white;
+          }
+        }
+        th:hover {
+          background-color: @dgray;
+        }
+      }
+    }
+
+    thead {
+      border-bottom: 2px solid @dgray;
+    }
+
+    th {
+      background: transparent;
+      padding-top: 8px;
+      border: 0;
+      font-size: 16px;
+
+      a {
+        font-size: 16px;
+        color: @black;
+        padding-bottom: 10px;
+      }
+    }
+
+    th:hover {
+      background-image: none !important;
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+
+  table.grp-sortable {
+    thead {
+      th.sortable {
+        .grp-sortoptions {
+          top: 5px;
+        }
+      }
+      th.sortable.sorted.ascending,
+      th.sortable.sorted.descending,
+      {
+        background-image: none;
+        .grp-text a {
+          font-weight: normal;
+          color: @lred;
+        }
+      }
+    }
+  }
+}
+
+.grp-module.grp-collapse {
+  border: 0;
+}
+
+table.grp-sortable thead th div.grp-text span,
+table.grp-sortable thead th.sortable .grp-text a {
+  padding: 10px;
+}
+
+.grp-pulldown-container {
+  .grp-pulldown-handler,
+  .grp-pulldown-handler:hover {
+    background-image: none;
+    background-color: @lgray;
+  }
+  .grp-pulldown-content,
+  .grp-pulldown-content:hover {
+    padding: 6px;
+    background: @white;
+  }
+}
+.grp-pulldown-container.grp-pulldown-state-open {
+  .grp-pulldown-handler {
+    color: @lred;
+    background: @lgray;
+  }
+  .grp-pulldown-handler:hover {
+    background-image: none;
+    background-color: @lgray;
+    color: @dred;
+  }
+}
+
+
+footer.grp-module {
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid @lborder;
 }

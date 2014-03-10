@@ -157,7 +157,7 @@
                         {% grappelli_sidebar %}
                     {% endsidebar %}
                 {% endblock %}
-                <div {% grappelli_has_sidebar %}class="g-content-with-sidebar"{% endsidebar %}>
+                <div class={% block content-container-class %}{% grappelli_has_sidebar %}"g-content-with-sidebar"{% endsidebar %}{% endblock %}>
                     {% block content %}
                         {{ content }}
                         {% block filters %}{% endblock %}
