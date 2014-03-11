@@ -12,6 +12,11 @@
 @lgray: #eeeeee;
 @dgray: rgb(119, 119, 119);
 @lborder: rgba(0, 0, 0, 0.15);
+@mgray: #999999;
+@lgreen: #22b24c;
+@dgreen: #1b903d;
+@lblue: #336699;
+@dblue: #29527a;
 
 // Navbar =====================================================================
 
@@ -330,6 +335,26 @@ header#grp-header {
   }
 }
 
+.grp-collapse.grp-closed>h3.grp-collapse-handler {
+  background-image: none;
+  background: @lgray;
+  text-shadow: none;
+  color: @lred;
+}
+
+.grp-collapse.grp-closed>h3.grp-collapse-handler:hover {
+  background-image: none;
+  background-color: @lred;
+  color: @white;
+}
+
+.grp-collapse.grp-open>h3.grp-collapse-handler {
+  background-image: none;
+  background: @dred;
+  text-shadow: none;
+  color: @white;
+}
+
 .grp-module.pagination {
   border: 1px solid transparent;
 
@@ -508,9 +533,90 @@ table.grp-sortable thead th.sortable .grp-text a {
   }
 }
 
+.grp-autocomplete-wrapper-fk {
+  input.ui-autocomplete-input:focus {
+    background-color: transparent;
+  }
+  a.related-lookup {
+    background-color: @lgray;
+  }
+  a.related-lookup:hover {
+    background-color: @lred;
+  }
+}
 
 footer.grp-module {
   margin-bottom: 0;
   border: 0;
   border-top: 1px solid @lborder;
 }
+
+.grp-submit-row {
+  &.grp-fixed-footer {
+    ul {
+      li {
+        background: none;
+        margin-bottom: 5px;
+        padding: 0 !important; /* FGIS */
+        .grp-button {
+          height: 36px;
+          background-image: none;
+          opacity: 1;
+          font-family: @font-family-serif;
+          padding: 8px 12px; /* FGIS */
+          font-size: 15px;
+          border-radius: 4px;
+          color: @white;
+          background-color: @dgray;
+          border-color: @dgray;
+        }
+        .grp-button:hover {
+          background-image: none;
+        }
+        input.grp-button {
+          background: @lgreen;
+          border-color: @dgreen;
+          &.grp-default {
+            background-color: @lblue;
+          }
+          &.grp-default:hover {
+            background-color: @dblue;
+          }
+        }
+        input.grp-button:hover {
+          background: @dgreen;
+        }
+        a.grp-delete-link {
+          background-color: @lred;
+          border-color: @dred;
+        }
+        a.grp-delete-link:hover {
+          background: @dred;
+          color: @white;
+        }
+      }
+    }
+  }
+}
+
+.grp-group>h2 {
+  background-image: none;
+  background-color: @dgray;
+  color: @white;
+  text-shadow: none;
+}
+
+.grp-module.grp-submit-row.grp-fixed-footer {
+  margin-bottom: 0;
+}
+
+.grp-object-tools li a[target="_blank"] {
+  background-color: @mgray;
+  background-image: none;
+  padding: 8px 12px;
+  &:hover {
+    background-image: none;
+    background-color: @dgray;
+  }
+}
+
