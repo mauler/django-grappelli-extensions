@@ -77,37 +77,3 @@ export DJANGO_SETTINGS_MODULE=grappelli_extensions.test_settings
 4. Commit your changes. (`git commit -am 'Add some feature'`)
 5. Push to the branch. (`git push origin my-new-feature`)
 6. Create new Pull Request.
-
-
-## Features
-
-##### ROADMAP for 0.1.2
-
-[x] Custom left sidebard.
-
-[x] Make travis.yml file using grappelli-extensions account.
-
-[ ] Improve documentation and some texts about the grappelli extensions.
-
-
-##### ROADMAP for 0.1.3
-
-[ ] Static site on http://django-grappelli-extensions.github.io
-
-[ ] Customized icons for navbar.
-
-[ ] Customized icons for sidebar.
-
-[ ] Customized icons for dashboard.
-
-
-##### ROADMAP for 0.1.4
-
-[ ] Create some skins themes.
-
-[ ] Custom columns for Grappelli Dashboard.
-
-
-##### ROADMAP for 0.1.5
-
-[ ] Redesign Grappelli Dashboard.
