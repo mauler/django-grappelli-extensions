@@ -1,0 +1,54 @@
+.sidebar {
+    float: left;
+    display: inline-block;
+    width: 20%;
+    border-radius: 3px;
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+.sidebar ul li {
+    background: linear-gradient(#e5e5e5,#eeeeee);
+    padding: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    border-top:1px solid white;
+}
+
+.sidebar ul li a {
+    text-shadow: 0 1px 0 #f5f5f5;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.sidebar ul li a.opened,
+.sidebar ul li a.active {
+    color: #444;
+}
+
+.sidebar ul li:first-child {
+    border-top: 0;
+}
+
+.sidebar ul li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+/** SIDEBAR DROPDOWN MENU **/
+.sidebar ul li ul {
+    display: none;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.sidebar ul li ul li {
+    padding: 5px;
+    background: transparent;
+}
+
+.g-content-with-sidebar {
+    display: inline-block;
+    margin-left: 10px;
+    width: 78%;
+}
