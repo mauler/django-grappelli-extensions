@@ -1,14 +1,18 @@
-# django-grappelli-extensions [![Build Status](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions)
+# django-grappelli-extensions [![Build Status](https://travis-ci.org/mauler/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions)
 
 
 Available features:
 * [Header navbar](#navbar)
 * [Left sidebar](#sidebar)
 
+* Python > 2.6
+* django-grappelli >= 2.4.5
+* Django >= 1.4
+ 
 # Installation
 
-* Python 2.6, 2.7, django-grappelli >= 2.4.5 and Django >= 1.4
-* Simply ```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
+* ```pip install django-grappelli-extensions``` 
+* Put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
 
 ## settings.py
@@ -23,8 +27,9 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
     'apptemplates.Loader',
 )
+```
 
-![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/screenshot.jpg)
+![Navigation bar](https://github.com/mauler/django-grappelli-extensions/raw/master/screenshot.jpg)
 
 Set the class that will generate your navigation bar:
 
@@ -34,7 +39,7 @@ GRAPPELLI_EXTENSIONS_NAVBAR = 'extensions.Navbar'
 
 ## sidebar
 
-![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/sidebar_screenshot.jpg)
+![Navigation bar](https://github.com/mauler/django-grappelli-extensions/raw/master/sidebar_screenshot.jpg)
 
 Set the class that will generate your sidebar:
 ```python
