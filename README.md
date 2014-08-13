@@ -1,12 +1,17 @@
-# django-grappelli-navbar
-
-![Navigation bar](https://api.travis-ci.org/gotlium/django-grappelli-navbar.png?branch=master)
+# django-grappelli-extensions [![Build Status](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions)
 
 
-![Navigation bar](https://github.com/gotlium/django-grappelli-navbar/raw/master/screenshot.jpg)
+Available features:
+* [Header navbar](#navbar)
+* [Left sidebar](#sidebar)
+
+# Installation
+
+* Python 2.6, 2.7, django-grappelli >= 2.4.5 and Django >= 1.4
+* Simply ```pip install django-grappelli-extensions``` and put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
 
-# settings.py
+## settings.py
 
  * Put 'grappelli_navbar' **before** 'grappelli' on INSTALLED_APPS
  * Put 'apptemplates.Loader' on your TEMPLATE_LOADERS setting:
@@ -19,19 +24,28 @@ TEMPLATE_LOADERS = (
     'apptemplates.Loader',
 )
 
-```
- * Set the class that will generate your navigation bar:
+![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/screenshot.jpg)
+
+Set the class that will generate your navigation bar:
 
 ```python
-GRAPPELLI_NAVBAR = 'navbar.Navbar'
+GRAPPELLI_EXTENSIONS_NAVBAR = 'extensions.Navbar'
 ```
 
-# navbar.py
+## sidebar
+
+![Navigation bar](https://github.com/django-grappelli-extensions/django-grappelli-extensions/raw/master/sidebar_screenshot.jpg)
+
+Set the class that will generate your sidebar:
+```python
+GRAPPELLI_EXTENSIONS_SIDEBAR = 'extensions.Sidebar'
+```
+#### extensions.py
 
 ```python
 from django.core.urlresolvers import reverse_lazy
 
-from grappelli_navbar.nodes import CLNode
+from grappelli_extensions.nodes import CLNode
 
 
 class Navbar(object):
@@ -56,18 +70,20 @@ class Navbar(object):
     )
 ```
 
-## CHANGELOG
+**IMPORTANT:** Sidebar class follows the very same structure.
 
-### 0.2.0 (2 Dec, 2013)
-#### Improvements:
-* Adds param "perms" to CLNode (Accept a list of admin permissions ex: ['change', 'add'] and if any of these is valid the node is showed)
+## To run tests
 
+```
+pip install -r requirements/tests.txt Django
+export DJANGO_SETTINGS_MODULE=grappelli_extensions.test_settings
+`which django-admin.py` test grappelli_extensions"
+```
 
-## TODO
+## Contributing
 
-[x] Close dropdown when other is clicked.
-
-[ ] Create helper roots: AppRoot
-
-[ ] Create helper nodes: AppNode, ModelNode
-
+1. Fork it.
+2. Create your feature branch. (`git checkout -b my-new-feature`)
+3. Commit your changes. (`git commit -am 'Add some feature'`)
+4. Push to the branch. (`git push origin my-new-feature`)
+5. Create new Pull Request.

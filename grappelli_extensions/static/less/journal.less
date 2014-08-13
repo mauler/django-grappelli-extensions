@@ -1,0 +1,631 @@
+// Journal 3.1.1
+// Bootswatch
+// -----------------------------------------------------
+
+@import "variables";
+@import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");
+@white: #FFF;
+@black: #000;
+@lblack: #333;
+@lred: #eb6864;
+@dred: #e22620;
+@lgray: #eeeeee;
+@dgray: rgb(119, 119, 119);
+@lborder: rgba(0, 0, 0, 0.15);
+@mgray: #999999;
+@lgreen: #22b24c;
+@dgreen: #1b903d;
+@lblue: #336699;
+@dblue: #29527a;
+
+// Navbar =====================================================================
+
+/*body {
+  font-family: @font-family-serif;
+}
+*/
+.navbar {
+  font-size: 18px;
+  font-family: @font-family-sans-serif;
+  font-weight: @headings-font-weight;
+}
+
+.navbar-brand {
+  font-size: 18px;
+  font-weight: @headings-font-weight;
+  text-transform: uppercase;
+}
+
+// Buttons ====================================================================
+
+// Typography =================================================================
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+.has-warning {
+  .help-block,
+  .control-label {
+    color: @brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-danger;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label {
+    color: @brand-primary;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-primary;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label {
+    color: @brand-success;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-success;
+  }
+}
+
+// Navs =======================================================================
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================
+
+.jumbotron {
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: @font-family-sans-serif;
+    font-weight: @headings-font-weight;
+    color: #000;
+  }
+}
+
+.panel {
+
+  &-primary,
+  &-success,
+  &-warning,
+  &-danger,
+  &-info {
+    .panel-title {
+      color: #fff;
+    }
+  }
+
+
+}
+
+// GRAPPELLI ==================================================================
+
+a {
+  color: @lred;
+}
+
+a:hover {
+  color: @dred;
+}
+
+h1 {
+  font-family: @font-family-sans-serif;
+  padding: 8px 0 20px 0;
+  font-size: 30px;
+
+}
+
+header#grp-header {
+  font-family: @font-family-sans-serif;
+
+  #grp-navigation {
+    background-color: @white;
+    background-image: none;
+    font-weight: 700;
+    color: @black;
+    font-size: 16px;
+    border: 0;
+
+    h1#grp-admin-title {
+      font-size: 20px;
+    }
+
+    a, a:hover {
+      color: @black;
+    }
+
+    ul#grp-user-tools {
+      border: 0;
+
+      li {
+        border: 0;
+
+        ul {
+          margin-left: 7px;
+          margin-top: 0;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+          background-color: @white;
+          font-weight: normal;
+          color: @lblack;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-clip: padding-box;
+
+          li {
+            a {
+              padding: 8px;
+              vertical-align: middle;
+            }
+            a:hover {
+              background: @lred;
+              color: @white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #grp-context-navigation {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    -moz-box-shadow:    0px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 0.25);
+    background-clip: padding-box;
+    #grp-breadcrumbs {
+      ul {
+        font-size: 14px;
+        a {
+          padding-right: 0;
+          background: none;
+          color: @lred;
+        }
+        a:hover {
+          color: @dred;
+          font-weight: 800;
+        }
+        a:after {
+          margin-left: 10px;
+          content: '>'
+        }
+      }
+    }
+  }
+}
+
+.grp-object-tools {
+  top: -44px;
+  right: 9px;
+
+  li {
+    font-family: @font-family-serif;
+
+    a {
+      opacity: 1;
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 8px 12px;
+      font-size: 15px;
+      line-height: 1.42857143;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      color: @white;
+      background-color: #999999;
+      border-color: #999999;
+
+    }
+    a:hover {
+      background: none;
+      border: 1px solid transparent !important;
+      background-color: #858585;
+      border-color: #7a7a7a;
+    }
+  }
+
+  li:last-child {
+    padding-right: 25px;
+  }
+}
+
+.sidebar {
+  font-family: @font-family-sans-serif;
+  background: @white;
+  border: 0;
+
+  ul {
+    border-radius: 3px;
+    li {
+      border: 0;
+      background: @white;
+      padding: 0;
+      display: block;
+      margin-top: 2px;
+
+      a {
+        color: @lred;
+        text-shadow: none;
+        padding: 8px 12px;
+        display: block;
+        position: relative;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      a:hover {
+        background: @lgray;
+        color: @dred;
+      }
+
+      a.opened {
+        color: @dred;
+      }
+
+      a.active {
+        background: @lred;
+        color: @white;
+      }
+
+      ul {
+        margin-top: 2px;
+        margin-left: 18px;
+        li {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+#grp-content-container {
+  padding-top: 10px;
+
+  .g-content-with-sidebar {
+    margin-left: 5px;
+  }
+}
+
+.grp-module {
+  border: 1px solid @lred;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-bottom: 10px;
+  background: @white;
+
+  .grp-row, .grp-row:not(tr) {
+    border-bottom-color: @lborder;
+    a {
+      color: @dgray;
+      font-size: 12px;
+    }
+    a:hover {
+      color: @lred;
+      font-weight: 700;
+    }
+  }
+
+  h2 {
+    color: @white;
+    border-radius: 0;
+    background-color: @lred;
+    border-color: @lred;
+    border-bottom: 1px solid transparent;
+    background-image: none;
+    text-shadow: none;
+    font-size: 14px;
+    a {
+      color: @white;
+    }
+  }
+}
+
+.grp-collapse.grp-closed>h3.grp-collapse-handler {
+  background-image: none;
+  background: @lgray;
+  text-shadow: none;
+  color: @lred;
+}
+
+.grp-collapse.grp-closed>h3.grp-collapse-handler:hover {
+  background-image: none;
+  background-color: @lred;
+  color: @white;
+}
+
+.grp-collapse.grp-open>h3.grp-collapse-handler {
+  background-image: none;
+  background: @dred;
+  text-shadow: none;
+  color: @white;
+}
+
+.grp-module.pagination {
+  border: 1px solid transparent;
+
+  .grp-row {
+    padding: 0;
+  }
+
+  .grp-pagination {
+    font-family: @font-family-serif;
+    ul {
+      li {
+        span, a {
+          font-size: 12px;
+          padding: 8px;
+        }
+
+        a {
+          color: @lred;
+        }
+
+        a:hover {
+          color: @dred;
+          background-color: @lgray;
+          border-color: @lborder;
+        }
+
+        span.this-page {
+          background-image: none;
+          color: @dgray;
+          background-color: @lgray;
+        }
+      }
+      li.grp-results {
+        span {
+          background-image: none;
+          background-color: @lgray;
+          color: @dgray;
+        }
+      }
+    }
+  }
+}
+
+.grp-changelist-results {
+  border: 0;
+  background-image: none !important; /* fuck grappelli and its important stuff! */
+  background-color: transparent !important;
+
+  table {
+    padding-top: 12px;
+    width: 100%;
+    border: 0;
+    font-family: @font-family-serif;
+    font-size: 14px;
+
+    td {
+      border: 0;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid @dgray;
+
+        th, td {
+          border: 0;
+        }
+
+        td {
+          font-size: 12px;
+        }
+
+        th:hover {
+          background-color: transparent;
+        }
+      }
+      tr.grp-row-even {
+        th, td {
+          border: 0;
+        }
+        th, td {
+          background-color: @lgray;
+        }
+        th:hover {
+          background-color: @lgray;
+        }
+      }
+      tr.grp-selected {
+        background-color: @dgray;
+        td, th {
+          background-color: @dgray;
+          color: @white;
+          a {
+            color: @white;
+          }
+        }
+        th:hover {
+          background-color: @dgray;
+        }
+      }
+    }
+
+    thead {
+      border-bottom: 2px solid @dgray;
+    }
+
+    th {
+      background: transparent;
+      padding-top: 8px;
+      border: 0;
+      font-size: 16px;
+
+      a {
+        font-size: 16px;
+        color: @black;
+        padding-bottom: 10px;
+      }
+    }
+
+    th:hover {
+      background-image: none !important;
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+
+  table.grp-sortable {
+    thead {
+      th.sortable {
+        .grp-sortoptions {
+          top: 5px;
+        }
+      }
+      th.sortable.sorted.ascending,
+      th.sortable.sorted.descending,
+      {
+        background-image: none;
+        .grp-text a {
+          font-weight: normal;
+          color: @lred;
+        }
+      }
+    }
+  }
+}
+
+.grp-module.grp-collapse {
+  border: 0;
+}
+
+table.grp-sortable thead th div.grp-text span,
+table.grp-sortable thead th.sortable .grp-text a {
+  padding: 10px;
+}
+
+.grp-pulldown-container {
+  .grp-pulldown-handler,
+  .grp-pulldown-handler:hover {
+    background-image: none;
+    background-color: @lgray;
+  }
+  .grp-pulldown-content,
+  .grp-pulldown-content:hover {
+    padding: 6px;
+    background: @white;
+  }
+}
+.grp-pulldown-container.grp-pulldown-state-open {
+  .grp-pulldown-handler {
+    color: @lred;
+    background: @lgray;
+  }
+  .grp-pulldown-handler:hover {
+    background-image: none;
+    background-color: @lgray;
+    color: @dred;
+  }
+}
+
+.grp-autocomplete-wrapper-fk {
+  input.ui-autocomplete-input:focus {
+    background-color: transparent;
+  }
+  a.related-lookup {
+    background-color: @lgray;
+  }
+  a.related-lookup:hover {
+    background-color: @lred;
+  }
+}
+
+footer.grp-module {
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid @lborder;
+  background: @lgray;
+}
+
+.grp-submit-row {
+  &.grp-fixed-footer {
+    ul {
+      li {
+        background: none;
+        margin-bottom: 5px;
+        padding: 0 !important; /* FGIS */
+        .grp-button {
+          height: 36px;
+          background-image: none;
+          opacity: 1;
+          font-family: @font-family-serif;
+          padding: 8px 12px; /* FGIS */
+          font-size: 15px;
+          border-radius: 4px;
+          color: @white;
+          background-color: @dgray;
+          border-color: @dgray;
+        }
+        .grp-button:hover {
+          background-image: none;
+        }
+        input.grp-button {
+          background: @lgreen;
+          border-color: @dgreen;
+          &.grp-default {
+            background-color: @lblue;
+          }
+          &.grp-default:hover {
+            background-color: @dblue;
+          }
+        }
+        input.grp-button:hover {
+          background: @dgreen;
+        }
+        a.grp-delete-link {
+          background-color: @lred;
+          border-color: @dred;
+        }
+        a.grp-delete-link:hover {
+          background: @dred;
+          color: @white;
+        }
+      }
+    }
+  }
+}
+
+.grp-group>h2 {
+  background-image: none;
+  background-color: @dgray;
+  color: @white;
+  text-shadow: none;
+}
+
+.grp-module.grp-submit-row.grp-fixed-footer {
+  margin-bottom: 0;
+}
+
+.grp-object-tools li a[target="_blank"] {
+  background-color: @mgray;
+  background-image: none;
+  padding: 8px 12px;
+  &:hover {
+    background-image: none;
+    background-color: @dgray;
+  }
+}
+

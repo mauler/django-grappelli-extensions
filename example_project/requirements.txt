@@ -1,0 +1,3 @@
+Django
+django-grappelli
+-e git://github.com/django-grappelli-extensions/django-grappelli-extensions.git#egg=django_grappelli_extensions-dev
