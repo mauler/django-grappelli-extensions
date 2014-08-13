@@ -1,4 +1,6 @@
-# django-grappelli-navbar
+# This project is deprecated, please check django-grappelli-extensions
+
+## django-grappelli-navbar 
 
 ![Navigation bar](https://api.travis-ci.org/gotlium/django-grappelli-navbar.png?branch=master)
 
