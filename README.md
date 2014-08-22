@@ -1,4 +1,12 @@
-# django-grappelli-extensions [![Build Status](https://travis-ci.org/mauler/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/django-grappelli-extensions/django-grappelli-extensions)
+# django-grappelli-extensions 
+
+[![Test Status](https://travis-ci.org/mauler/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/mauler/django-grappelli-extensions)
+
+[![Code Health](https://landscape.io/github/mauler/django-grappelli-extensions/master/landscape.png)](https://landscape.io/github/mauler/django-grappelli-extensions/master)
+
+[![Latest PyPI version](https://pypip.in/v/django-grappelli-extensions/badge.png)](https://crate.io/packages/django-grappelli-extensions/)
+
+[![Number of PyPI downloads](https://pypip.in/d/django-grappelli-extensions/badge.png)](https://crate.io/packages/django-grappelli-extensions/)
 
 
 Available features:
