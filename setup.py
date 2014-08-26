@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 
 from setuptools import setup, find_packages
 import os
 import re
 import sys
-
-from __future__ import print_function
 
 
 VERSION_FILE = 'grappelli_extensions/__init__.py'
