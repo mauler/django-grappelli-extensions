@@ -104,7 +104,7 @@ class GrappelliHasSidebar(Tag):
     def render_tag(self, context, nodelist):
         output = ''
         sidebar = get_sidebar()
-        if(len(sidebar.nodes)):
+        if len(sidebar.nodes):
             output = nodelist.render(context)
         return output
 

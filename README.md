@@ -1,4 +1,4 @@
-# django-grappelli-extensions 
+# django-grappelli-extensions
 
 [![Test Status](https://travis-ci.org/mauler/django-grappelli-extensions.png?branch=master)](https://travis-ci.org/mauler/django-grappelli-extensions)
 
@@ -16,10 +16,10 @@ Available features:
 * Python > 2.6
 * django-grappelli >= 2.4.5
 * Django >= 1.4
- 
+
 # Installation
 
-* ```pip install django-grappelli-extensions``` 
+* ```pip install django-grappelli-extensions```
 * Put ```grappelli_extensions``` **before** ```grappelli``` on INSTALLED_APPS.
 
 
@@ -83,7 +83,7 @@ class Navbar(object):
     )
 ```
 
-**IMPORTANT:** Sidebar class follows the very same structure.
+**IMPORTANT:** Sidebar class follows the very same structure (But only use root nodes).
 
 ## To run tests
 
