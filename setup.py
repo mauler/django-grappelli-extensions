@@ -29,7 +29,9 @@ author_email = 'proberto.macedo@gmail.com, ip.leroy@gmail.com'
 license = 'BSD'
 install_requires = [
     'django-grappelli>=2.4.6',
-    'django-classy-tags>=0.4']
+    'django-classy-tags>=0.4',
+    'django-apptemplates',
+]
 
 
 if sys.argv[-1] == 'publish':
