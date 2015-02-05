@@ -25,7 +25,7 @@ Available features:
 
 ## settings.py
 
- * Put 'grappelli_navbar' **before** 'grappelli' on INSTALLED_APPS
+ * Put 'grappelli_extensions' **before** 'grappelli' on INSTALLED_APPS
  * Put 'apptemplates.Loader' on your TEMPLATE_LOADERS setting:
 
 ```python
