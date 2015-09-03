@@ -4,29 +4,44 @@ import sys
 
 from django import template
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.templatetags.static import static
 
 from classytags.core import Tag, Options
 from classytags.helpers import InclusionTag
+from importlib import import_module
 
 
-def get_extension(setting, default, *args, **kwargs):
+def get_extension(setting, default, context, *args, **kwargs):
     extension = getattr(settings, setting, default)
-    parts = extension.split(".")
-    module = ".".join(parts[:-1])
-    __import__(module)
-    module = sys.modules[module]
-    return getattr(module, parts[-1])
+    if isinstance(extension, dict):
+        curr_url = context.get('request').path
+        for key in extension:
+            admin_site_mod, admin_site_inst = key.rsplit('.', 1)
+            admin_site_mod = import_module(admin_site_mod)
+            admin_site = getattr(admin_site_mod, admin_site_inst)
+            admin_url = reverse('%s:index' % admin_site.name)
+            if curr_url.startswith(admin_url):
+                mod, inst = extension[key].rsplit('.', 1)
+                mod = import_module(mod)
+                return getattr(mod, inst)
+    else:
+        mod, inst = extension.rsplit('.', 1)
+        mod = import_module(mod)
+        return getattr(mod, inst)
+    raise ValueError('Extension matching "%s" not found' % dashboard_cls)
 
 
-def get_navbar():
+def get_navbar(context):
     return get_extension('GRAPPELLI_EXTENSIONS_NAVBAR',
-                         'grappelli_extensions.navbar.Navbar')
+                         'grappelli_extensions.navbar.Navbar',
+                         context)
 
 
-def get_sidebar():
+def get_sidebar(context):
     return get_extension('GRAPPELLI_EXTENSIONS_SIDEBAR',
-                         'grappelli_extensions.navbar.Navbar')
+                         'grappelli_extensions.navbar.Navbar',
+                         context)
 
 
 def get_theme():
@@ -79,7 +94,7 @@ class GrappelliNavbar(InclusionTag):
     template = 'grappelli/navbar.html'
 
     def get_context(self, context):
-        navbar = get_navbar()
+        navbar = get_navbar(context)
         return {'children': get_children(navbar, context['request'])}
 
 
@@ -88,7 +103,7 @@ class GrappelliSidebar(InclusionTag):
     template = 'grappelli/sidebar.html'
 
     def get_context(self, context):
-        sidebar = get_sidebar()
+        sidebar = get_sidebar(context)
         return {
             'sidebar_children': get_children(sidebar, context['request']),
             'request': context['request']
