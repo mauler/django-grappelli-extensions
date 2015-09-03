@@ -44,6 +44,13 @@ Set the class that will generate your navigation bar:
 ```python
 GRAPPELLI_EXTENSIONS_NAVBAR = 'extensions.Navbar'
 ```
+or if you have multiple admin sites
+```python
+GRAPPELLI_EXTENSIONS_NAVBAR = {  # alternative method
+    'yourproject.admin.admin_site': 'yourproject.extensions.Navbar',
+    'yourproject.admin.second_admin_site': 'yourproject.extensions.second_Navbar',
+}
+```
 
 ## sidebar
 
@@ -53,6 +60,14 @@ Set the class that will generate your sidebar:
 ```python
 GRAPPELLI_EXTENSIONS_SIDEBAR = 'extensions.Sidebar'
 ```
+or if you have multiple admin sites
+```python
+GRAPPELLI_EXTENSIONS_SIDEBAR = {  # alternative method
+    'yourproject.admin.admin_site': 'yourproject.extensions.Sidebar',
+    'yourproject.admin.second_admin_site': 'yourproject.extensions.second_Sidebar',
+}
+```
+
 #### extensions.py
 
 ```python
