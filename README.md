@@ -4,9 +4,9 @@
 
 [![Code Health](https://landscape.io/github/mauler/django-grappelli-extensions/master/landscape.png)](https://landscape.io/github/mauler/django-grappelli-extensions/master)
 
-[![Latest PyPI version](https://pypip.in/v/django-grappelli-extensions/badge.png)](https://crate.io/packages/django-grappelli-extensions/)
+[![Latest PyPI version](https://img.shields.io/pypi/v/django-grappelli-extensions.svg)](https://crate.io/packages/django-grappelli-extensions/)
 
-[![Number of PyPI downloads](https://pypip.in/d/django-grappelli-extensions/badge.png)](https://crate.io/packages/django-grappelli-extensions/)
+[![Number of PyPI downloads](https://img.shields.io/pypi/dm/django-grappelli-extensions.svg)](https://crate.io/packages/django-grappelli-extensions/)
 
 
 Available features:
